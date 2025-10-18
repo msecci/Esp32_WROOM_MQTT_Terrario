@@ -1,0 +1,69 @@
+<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sfondo -->
+  <rect width="320" height="170" fill="#000" />
+  
+  <!-- Sezione sinistra: Data, Ora e Giorno -->
+  <rect x="5" y="5" width="105" height="160" rx="5" fill="#111" stroke="#333" stroke-width="1" />
+  <text x="57" y="25" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Martedì</text>
+  <text x="57" y="45" font-family="Arial" font-size="14" fill="#fff" text-anchor="middle">15/04/2025</text>
+  <text x="57" y="85" font-family="Arial" font-size="36" fill="#fff" text-anchor="middle" font-weight="bold">14:30</text>
+  
+  <!-- Scenario attuale -->
+  <rect x="15" y="110" width="85" height="30" rx="15" fill="#222" />
+  <text x="57" y="130" font-family="Arial" font-size="14" fill="#5f5" text-anchor="middle">Diurno</text>
+  
+  <!-- Timer illuminazione -->
+  <rect x="15" y="145" width="85" height="15" rx="7" fill="#222" />
+  <text x="30" y="157" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">LUCI:</text>
+  <text x="70" y="157" font-family="Arial" font-size="10" fill="#5ff" text-anchor="middle" font-weight="bold">8h 30m</text>
+  
+  <!-- Sezione centrale: Parametri terrario -->
+  <rect x="115" y="5" width="95" height="160" rx="5" fill="#111" stroke="#333" stroke-width="1" />
+  
+  <!-- Termometro stilizzato (posizionato più in alto) -->
+  <rect x="162" y="20" width="4" height="25" rx="2" fill="none" stroke="#f55" stroke-width="1" />
+  <circle cx="164" cy="45" r="6" fill="#f55" stroke="#f55" stroke-width="1" />
+  
+  <!-- Linee di livello termometro -->
+  <line x1="157" y1="25" x2="162" y2="25" stroke="#f55" stroke-width="0.8" />
+  <line x1="157" y1="32" x2="162" y2="32" stroke="#f55" stroke-width="0.8" />
+  <line x1="157" y1="39" x2="162" y2="39" stroke="#f55" stroke-width="0.8" />
+  
+  <!-- Riempimento termometro -->
+  <rect x="163" y="32" width="2" height="13" rx="1" fill="#f55" />
+  
+  <!-- Temperatura valore (distante dal termometro) -->
+  <text x="162" y="75" font-family="Arial" font-size="16" fill="#f55" text-anchor="middle" font-weight="bold">25.4°C</text>
+  
+  <!-- Simbolo umidità stilizzato (goccia d'acqua spostata più in basso, più vicina al valore) -->
+  <path d="M162,110 Q162,103 156,113 Q153,120 162,120 Q171,120 168,113 Q162,103 162,110" 
+        fill="#55f" stroke="#55f" stroke-width="1" />
+  
+  <!-- Linee interne goccia (onde) -->
+  <path d="M157,115 Q159,113 162,115 Q165,117 167,115" 
+        fill="none" stroke="#fff" stroke-width="0.8" opacity="0.6" />
+  <path d="M158,118 Q160,116 162,118 Q164,120 166,118" 
+        fill="none" stroke="#fff" stroke-width="0.8" opacity="0.6" />
+  
+  <!-- Umidità valore (più vicino alla goccia) -->
+  <text x="162" y="135" font-family="Arial" font-size="16" fill="#55f" text-anchor="middle" font-weight="bold">78%</text>
+  
+  <!-- Sezione destra: Meteo -->
+  <rect x="215" y="5" width="100" height="160" rx="5" fill="#111" stroke="#333" stroke-width="1" />
+  <text x="265" y="25" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">METEO</text>
+  
+  <!-- Icona meteo (esempio: sole) -->
+  <circle cx="265" cy="70" r="25" fill="#ff0" stroke="#ff5" stroke-width="1" />
+  <line x1="265" y1="35" x2="265" y2="45" stroke="#ff5" stroke-width="2" />
+  <line x1="265" y1="95" x2="265" y2="105" stroke="#ff5" stroke-width="2" />
+  <line x1="230" y1="70" x2="240" y2="70" stroke="#ff5" stroke-width="2" />
+  <line x1="290" y1="70" x2="300" y2="70" stroke="#ff5" stroke-width="2" />
+  <line x1="239" y1="44" x2="249" y2="54" stroke="#ff5" stroke-width="2" />
+  <line x1="281" y1="86" x2="291" y2="96" stroke="#ff5" stroke-width="2" />
+  <line x1="239" y1="96" x2="249" y2="86" stroke="#ff5" stroke-width="2" />
+  <line x1="281" y1="54" x2="291" y2="44" stroke="#ff5" stroke-width="2" />
+  
+  <!-- Temperatura esterna -->
+  <rect x="235" y="120" width="60" height="35" rx="5" fill="#222" />
+  <text x="265" y="140" font-family="Arial" font-size="20" fill="#ff5" text-anchor="middle" font-weight="bold">22°C</text>
+</svg>

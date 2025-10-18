@@ -1,0 +1,24 @@
+<svg viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="black" />
+  <circle cx="16" cy="16" r="12" fill="#999999" stroke="#ffffff" stroke-width="1" />
+  <circle cx="16" cy="16" r="11" fill="#777777" stroke="#ffffff" stroke-width="0.5" />
+  <circle cx="16" cy="16" r="1" fill="#ffffff" />
+  
+  <!-- Quadrante dell'orologio -->
+  <line x1="16" y1="16" x2="16" y2="8" stroke="#ff3333" stroke-width="1.2" stroke-linecap="round" /> <!-- Lancetta delle ore (rossa) -->
+  <line x1="16" y1="16" x2="22" y2="16" stroke="#33ccff" stroke-width="0.8" stroke-linecap="round" /> <!-- Lancetta dei minuti (blu) -->
+  
+  <!-- Tacche delle ore -->
+  <line x1="16" y1="5" x2="16" y2="7" stroke="#ffffff" stroke-width="1" />
+  <line x1="27" y1="16" x2="25" y2="16" stroke="#ffffff" stroke-width="1" />
+  <line x1="16" y1="27" x2="16" y2="25" stroke="#ffffff" stroke-width="1" />
+  <line x1="5" y1="16" x2="7" y2="16" stroke="#ffffff" stroke-width="1" />
+  
+  <line x1="22.5" y1="9.5" x2="21" y2="11" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="22.5" y1="22.5" x2="21" y2="21" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="9.5" y1="22.5" x2="11" y2="21" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="9.5" y1="9.5" x2="11" y2="11" stroke="#ffffff" stroke-width="0.5" />
+  
+  <!-- Bordo esterno -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#ffffff" stroke-width="1" />
+</svg>
