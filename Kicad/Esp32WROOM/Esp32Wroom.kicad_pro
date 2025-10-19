@@ -453,7 +453,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Esp32Mac.kicad_pro",
+    "filename": "Esp32Wroom.kicad_pro",
     "version": 3
   },
   "net_settings": {
