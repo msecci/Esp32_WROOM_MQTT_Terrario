@@ -48,10 +48,10 @@ float currentVersion=2.28;
 
 
 /*_______________________PIN DISPLAY____________________*/
-#define TFT_CS    10
-#define TFT_DC    13
-#define TFT_MOSI   9
-#define TFT_SCLK   8
+#define TFT_CS     2 //1
+#define TFT_DC     2 //2
+#define TFT_MOSI   2 //3
+#define TFT_SCLK   2 //4
 #define TFT_RST   -1		//pin per reset non utilizzato
 
 //Timer
@@ -79,17 +79,17 @@ float currentVersion=2.28;
 #define MQTT_DEBUG false       //abilita l'uscita su mqtt nella funzione printDebug
 
 /*______________________ SENSOR DEFINITIONS (input) _____________________*/
-#define PIN_DHT        5
-#define BUTTON_PREV   11
-#define BUTTON_NEXT   44
-#define BUTTON_SELECT 12
-#define PIN_PHOTO      3
-#define PIN_BL        43
+#define PIN_DHT        2 //5
+#define BUTTON_PREV    2 //6
+#define BUTTON_NEXT    2 //7
+#define BUTTON_SELECT  2 //8
+#define PIN_PHOTO      2 //9
+#define PIN_BL         2 //10
 
 /*_____________________ OUTPUT DEFINITIONS  (output) _____________________*/
-#define PIN_LED_BLU       4
-#define PIN_LED_RED       2
-#define PIN_LED_WHITE     1
+#define PIN_LED_BLU       2
+#define PIN_LED_RED       2 //2
+#define PIN_LED_WHITE     2
 
 /*_____________DEFINIZIONE DI ALTRI COLORI_______________*/
 #define ST77XX_GRAY      0x8430
