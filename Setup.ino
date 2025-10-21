@@ -32,7 +32,9 @@ void setup() {
 
 	// Inizializza il WiFiManager
 	WiFiManager wm;
-	
+	Serial.println("MacAddress: ");
+	Serial.print(String(WiFi.macAddress()));
+
 	// Avvia il WiFiManager e cerca di collegarsi alla rete salvata
 	if (!wm.autoConnect("ESP32_AP")) {
 		printDebug("Impossibile connettersi alla rete WiFi. Solo funzioni locali",false,SERIAL_DEBUG,TFT_DEBUG);

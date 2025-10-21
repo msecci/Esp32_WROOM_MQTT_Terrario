@@ -11,9 +11,9 @@ float currentVersion=2.28;
 #define MAX_RED            800  //massimo valore per LED ROSSO (attenzione all'assorbimento) max 4096     
 #define HYSTERESIS        	10 //valore per isteresi su luminosità
 //#define URL               	"http://msecci.freeddns.org:63451/Terrario/firmware_test.bin"    //path aggiornamento firmware di test
-#define URL               	"http://msecci.freeddns.org:63451/Terrario/firmware.bin"    //path aggiornamento firmware
-#define URLVER            	"http://msecci.freeddns.org:63451/Terrario/version.txt"     //path verifica aggiornamento firmware
-#define URL_APK             "http://msecci.freeddns.org:63451/Terrario/app.apk"         //path aggiornamento app.apk
+#define URL               	"http://msecci.freeddns.org:63451/Terrario-S3/firmware.bin"    //path aggiornamento firmware
+#define URLVER            	"http://msecci.freeddns.org:63451/Terrario-S3/version.txt"     //path verifica aggiornamento firmware
+#define URL_APK             "http://msecci.freeddns.org:63451/Terrario-S3/app.apk"         //path aggiornamento app.apk
 //#define URLVER_APK         	"http://msecci.freeddns.org:63451/Terrario/versionApk.txt"  //path verifica aggiornamento apk
 #define TEMP_ALERT        	45   //temperatura rilevata da dht per far scattare l'allarme e spegnere tutti i led. Si ripristina con <OK>
 #define ORA_DI_AVVIO_TIMER   8   //Ora di avvio di default del timer
@@ -29,7 +29,9 @@ float currentVersion=2.28;
 #include <WiFiManager.h>
 #include <HTTPClient.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
+//#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789 per C3
+#include <TFT_eSPI.h>  //Esp32
+//#include <LovyanGFX.hpp>
 #include <SPI.h>
 #include <ArduinoOTA.h>
 #include <Update.h>
