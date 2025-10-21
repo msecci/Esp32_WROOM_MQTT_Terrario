@@ -46,9 +46,9 @@ void onSelectClick() {
         scenarioAttivo=currentIndex;
         pubblicaValoriScenario(scenarioAttivo,true);
         aggiornaLuminositaScenarioAttivo();
-        tft.fillScreen(ST77XX_BLACK);
-        drawText(0,40,3,ST77XX_YELLOW,"Scenario attivo:");
-        drawText(0,100,3,ST77XX_BLUE,String(scenari[scenarioAttivo].nome).c_str());
+        tft.fillScreen(TFT_BLACK);
+        drawText(0,40,3,TFT_YELLOW,"Scenario attivo:");
+        drawText(0,100,3,TFT_BLUE,String(scenari[scenarioAttivo].nome).c_str());
         stato=0;
         displayStato(stato);
   
@@ -58,9 +58,9 @@ void onSelectClick() {
         if(conferma){
           switch(tipoConferma){
             case 0: //Riavvio WiFi
-              tft.fillScreen(ST77XX_BLACK);
+              tft.fillScreen(TFT_BLACK);
               tft.setTextSize(2); 
-              tft.setTextColor(ST77XX_YELLOW);
+              tft.setTextColor(TFT_YELLOW);
               tft.setCursor(10,0);  
               tft.println("...Avvio reset WiFi..."); 
               tft.println(); 
@@ -78,8 +78,8 @@ void onSelectClick() {
           break;
 
           case 1: //Riavvio ESP             
-              tft.fillScreen(ST77XX_BLACK);
-              drawText(0, 0, 3, ST77XX_RED, "...RIAVVIO...");
+              tft.fillScreen(TFT_BLACK);
+              drawText(0, 0, 3, TFT_RED, "...RIAVVIO...");
               delay(1000);
            		ESP.restart();
           break;
@@ -151,7 +151,7 @@ void onPrevClick() {
       int prevIdx = currentDay;
       String isoPrev = timeArrayJson[prevIdx].as<String>();
       String giornoPrev = TimeManager::weekdayNameFromISO(isoPrev);
-      drawText(posizioneIcone[prevIdx].x_g, posizioneIcone[prevIdx].y_g, 2, ST77XX_WHITE,giornoPrev.c_str());
+      drawText(posizioneIcone[prevIdx].x_g, posizioneIcone[prevIdx].y_g, 2, TFT_WHITE,giornoPrev.c_str());
 
       // --- calcola il nuovo indice con wrap all’indietro ---
       int nextIdx = (currentDay - 1);
@@ -160,7 +160,7 @@ void onPrevClick() {
       // --- seleziona il nuovo (rosso) ---
       String isoNext = timeArrayJson[nextIdx].as<String>();
       String giornoNext = TimeManager::weekdayNameFromISO(isoNext);
-      drawText(posizioneIcone[nextIdx].x_g, posizioneIcone[nextIdx].y_g, 2, ST77XX_RED, giornoNext.c_str());
+      drawText(posizioneIcone[nextIdx].x_g, posizioneIcone[nextIdx].y_g, 2, TFT_RED, giornoNext.c_str());
 
       // aggiorna la variabile di stato
       currentDay = nextIdx;
@@ -186,8 +186,8 @@ void onPrevClick() {
   
     case 4: //form di conferma
       conferma=false;
-      drawButton(80,110,40,25,ST77XX_GRAY,ST77XX_RED,"NO");
-      drawButton(200,110,40,25,ST77XX_GRAY,ST77XX_WHITE,"SI");
+      drawButton(80,110,40,25,TFT_GRAY,TFT_RED,"NO");
+      drawButton(200,110,40,25,TFT_GRAY,TFT_WHITE,"SI");
     break;
     case 5: //QRCode Nodo
       stato=6;
@@ -248,7 +248,7 @@ void onNextClick() {
       int prevIdx = currentDay;
       String isoPrev = timeArrayJson[prevIdx].as<String>();                 // "YYYY-MM-DD"
       String giornoPrev = TimeManager::weekdayNameFromISO(isoPrev);         // "Lunedì", ...
-      drawText(posizioneIcone[prevIdx].x_g,posizioneIcone[prevIdx].y_g,2, ST77XX_WHITE,giornoPrev.c_str());
+      drawText(posizioneIcone[prevIdx].x_g,posizioneIcone[prevIdx].y_g,2, TFT_WHITE,giornoPrev.c_str());
 
       // --- calcola il prossimo indice con wrap ---
       int nextIdx = (currentDay + 1);
@@ -257,7 +257,7 @@ void onNextClick() {
       // --- seleziona il nuovo (rosso) ---
       String isoNext = timeArrayJson[nextIdx].as<String>();
       String giornoNext = TimeManager::weekdayNameFromISO(isoNext);
-      drawText(posizioneIcone[nextIdx].x_g,posizioneIcone[nextIdx].y_g,2, ST77XX_RED,giornoNext.c_str());
+      drawText(posizioneIcone[nextIdx].x_g,posizioneIcone[nextIdx].y_g,2, TFT_RED,giornoNext.c_str());
 
       // aggiorna la variabile di stato
       currentDay = nextIdx;
@@ -282,8 +282,8 @@ void onNextClick() {
 
     case 4: //form di conferma
       conferma=true;
-      drawButton(80,110,40,25,ST77XX_GRAY,ST77XX_WHITE,"NO");
-      drawButton(200,110,40,25,ST77XX_GRAY,ST77XX_RED,"SI");
+      drawButton(80,110,40,25,TFT_GRAY,TFT_WHITE,"NO");
+      drawButton(200,110,40,25,TFT_GRAY,TFT_RED,"SI");
     break;
 
     case 5: //QRCode Nodo
@@ -328,9 +328,9 @@ void onSelectLong(){
     case 3: // switch ciclo attivo/spento
       cicloContinuo=!cicloContinuo;
       if(cicloContinuo){
-        drawText(280,140,3,ST77XX_GREEN,"CL");    //ciclo continuo attivo
+        drawText(280,140,3,TFT_GREEN,"CL");    //ciclo continuo attivo
       }else{
-        drawText(280,140,3,ST77XX_RED,"CL");  //ciclo continuo spento
+        drawText(280,140,3,TFT_RED,"CL");  //ciclo continuo spento
       }
       saveParameters(false);
       delay(300);
@@ -391,9 +391,9 @@ void onNextLong(){
     case 3: // switch Timer attivo/spento
       timerAttivo=!timerAttivo;
       if(timerAttivo){
-        drawText(227,140,3,ST77XX_GREEN,"TM");    //timer attivo
+        drawText(227,140,3,TFT_GREEN,"TM");    //timer attivo
       }else{
-        drawText(227,140,3,ST77XX_RED,"TM");  //timer spento
+        drawText(227,140,3,TFT_RED,"TM");  //timer spento
       }
       saveParameters(false);
       printDebug(" TM pressione lunga",false,SERIAL_DEBUG,TFT_DEBUG);

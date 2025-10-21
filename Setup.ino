@@ -15,10 +15,10 @@ void setup() {
 	/****************************************/
 
 	/************ Init display *****************/  
-        tft.init();
-        tft.setRotation(1);  // Orientamento del display
-        tft.setSwapBytes(true);
-        digitalWrite(PIN_BL,HIGH); //retroilluminazione accesa
+  tft.init();
+  tft.setRotation(0);  // Orientamento del display
+  tft.setSwapBytes(true);
+  digitalWrite(PIN_BL,HIGH); //retroilluminazione accesa
 
 	////////////////// PULSANTI //////////////////////////
 	/*imposta debounde*/
@@ -76,11 +76,11 @@ void setup() {
 	#endif
 
 	// Se la connessione è riuscita, stampa l'indirizzo IP
-	tft.fillScreen(ST77XX_BLACK);
-	drawText(0, 1, 3, ST77XX_YELLOW, "WiFi connesso");
-	drawText(0, 30, 3, ST77XX_YELLOW, WiFi.localIP().toString().c_str());
-	drawText(0, 60, 3, ST77XX_GREEN, ("Ver.: " + String(currentVersion)).c_str());
-	drawText(0, 150, 3, ST77XX_RED, String("ID:"+mqtt_nodeID).c_str());
+	tft.fillScreen(TFT_BLACK);
+	drawText(0, 1, 3, TFT_YELLOW, "WiFi connesso");
+	drawText(0, 30, 3, TFT_YELLOW, WiFi.localIP().toString().c_str());
+	drawText(0, 60, 3, TFT_GREEN, ("Ver.: " + String(currentVersion)).c_str());
+	drawText(0, 150, 3, TFT_RED, String("ID:"+mqtt_nodeID).c_str());
 
 	// Configurazione OTA
 	ArduinoOTA.setHostname(OTA_HOSTNAME); // Nome del dispositivo OTA

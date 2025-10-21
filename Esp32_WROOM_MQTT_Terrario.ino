@@ -92,7 +92,7 @@ float currentVersion=2.28;
 #define PIN_LED_WHITE     27
 
 /*_____________DEFINIZIONE DI ALTRI COLORI_______________*/
-#define ST77XX_BLACK     0x0000
+/*#define ST77XX_BLACK     0x0000
 #define ST77XX_BLUE      0x001F
 #define ST77XX_RED       0xF800
 #define ST77XX_GREEN     0x07E0
@@ -103,7 +103,7 @@ float currentVersion=2.28;
 #define ST77XX_ORANGE    0xFD20
 #define ST77XX_GRAY      0x8430
 #define ST77XX_DARKGRAY  0x52AA
-
+*/
 // dimensioni display
 const int screenWidth = 320;
 const int screenHeight = 170;

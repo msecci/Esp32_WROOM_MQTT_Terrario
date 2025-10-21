@@ -9,8 +9,8 @@ void saveParameters(bool messaggio) {
   pubblicaValoriCicli(false);   //riaggiorna mqtt senza salvare
 
   if(messaggio){
-    tft.fillScreen(ST77XX_BLACK);
-    drawText(0, 1, 3, ST77XX_WHITE, "Parametri salvati");
+    tft.fillScreen(TFT_BLACK);
+    drawText(0, 1, 3, TFT_WHITE, "Parametri salvati");
     delay(1000);
   }
 }

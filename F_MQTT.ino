@@ -211,8 +211,8 @@ void azionamento(String messaggio, String topic){
       int test_W, test_R, test_B;
       int prev_W, prev_R, prev_B;
       bool wasOn = ledOn;
-			tft.fillScreen(ST77XX_YELLOW);
-  		drawText(0,0,4,ST77XX_BLACK,"Test LED");
+			tft.fillScreen(TFT_YELLOW);
+  		drawText(0,0,4,TFT_BLACK,"Test LED");
       result = sscanf(Cstr,"%d,%d,%d",&test_W,&test_R,&test_B);
       if (result == 3) {
         sunLight.getCurrentPercentages(prev_W, prev_R, prev_B); // leggi valori correnti
