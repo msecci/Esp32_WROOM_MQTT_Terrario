@@ -416,10 +416,8 @@ void drawButton(int x, int y, int w, int h, uint16_t color, uint16_t textColor, 
   tft.setTextColor(textColor);
   tft.setTextSize(2); // Imposta la dimensione del testo (regola a piacere)
 
-  int16_t textX, textY;
-  uint16_t textWidth, textHeight;
-
-  tft.getTextBounds(text, 0, 0, &textX, &textY, &textWidth, &textHeight);
+  int16_t textWidth = tft.textWidth(text.c_str());
+  int16_t textHeight = tft.fontHeight();
 
   // Calcola le coordinate per centrare il testo all'interno del pulsante
   int centerX = x + (w - textWidth) / 2;
@@ -502,9 +500,8 @@ void drawText(int x, int y, int dimensione, uint16_t colore, const char *testo) 
   tft.setTextColor(colore);
 
   // Calcola la larghezza e l'altezza del testo
-  int16_t x1, y1;
-  uint16_t w, h;
-  tft.getTextBounds(testo, 0, 0, &x1, &y1, &w, &h);
+  int16_t w = tft.textWidth(testo);
+  int16_t h = tft.fontHeight();
 
   // Gestione del posizionamento
   int finalX = x;
