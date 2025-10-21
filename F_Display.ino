@@ -38,7 +38,7 @@ void mainScreen() {
     // Scenario
     tft.setTextColor(ST77XX_WHITE);
     drawText(40,145,2,ST77XX_WHITE,(scenari[scenarioAttivo].nome).c_str());
-    tft.drawRGBBitmap(2, 138, scenari[scenarioAttivo].icona, 32, 32);
+    tft.pushImage(2, 138, 32, 32, scenari[scenarioAttivo].icona);
 
     // Tempo residuo
     int minutiRes;
@@ -55,16 +55,16 @@ void mainScreen() {
           (minRes < 10 ? "0" : "") + String(minRes < 0 ? 0 : minRes)).c_str());
     //drawText(34,110,2,ST77XX_WHITE,(String(oreRes<0 ? 0 : oreRes)+":"+String(minRes<0 ? 0 : minRes)).c_str());
     if(scenari[scenarioAttivo].ciclo==0){
-      tft.drawRGBBitmap(0, 92, icoResiduo, 32, 32);
+      tft.pushImage(0, 92, 32, 32, icoResiduo);
     }else{
-      tft.drawRGBBitmap(0, 92, icoAlba, 32, 32);
+      tft.pushImage(0, 92, 32, 32, icoAlba);
     }
 
     // Temperatura
     drawText(195,10,3,ST77XX_WHITE,"^C");
-    tft.drawRGBBitmap(155, 5, icoTermometro, 32, 32);
+    tft.pushImage(155, 5, 32, 32, icoTermometro);
     // Umidità
-    tft.drawRGBBitmap(92, 90, icoUmidita, 32, 32);
+    tft.pushImage(92, 90, 32, 32, icoUmidita);
 
     // Current. T.
     drawText(230,145,3,ST77XX_WHITE,String(temperatureCurrent).c_str());
@@ -111,7 +111,7 @@ void setupScreen() {
   
   for (int i=0;i<4;i++){
     drawText(scenari[i].xText,scenari[i].yText,2,ST77XX_WHITE,(scenari[i].nome).c_str());
-    tft.drawRGBBitmap(scenari[i].xIco, scenari[i].yIco, scenari[i].icona, 32, 32);
+    tft.pushImage(scenari[i].xIco, scenari[i].yIco, 32, 32, scenari[i].icona);
   }
   
   // Evidenzia scenario attivo
@@ -196,13 +196,13 @@ void weatherScreen() {
   String sunriseHHMM = sunrise[currentDay].as<String>().substring(11,16);
   String sunsetHHMM  = sunset[currentDay].as<String>().substring(11,16);
   drawText(40,93,2, ST77XX_WHITE, sunriseHHMM.c_str());
-  tft.drawRGBBitmap(5, 90,  icoAlba, 32, 32);
+  tft.pushImage(5, 90, 32, 32, icoAlba);
   drawText(165,95,2, ST77XX_WHITE, sunsetHHMM.c_str());
-  tft.drawRGBBitmap(130, 90, icoTramonto, 32, 32);
+  tft.pushImage(130, 90, 32, 32, icoTramonto);
 
   // Precipitazioni / Temperature
   drawText(120,50,2, ST77XX_WHITE, (String(precipitationSum[currentDay].as<float>()) + " mm").c_str());
-  tft.drawRGBBitmap(5,45, icoPrecipitazioni, 32,32);
+  tft.pushImage(5, 45, 32, 32, icoPrecipitazioni);
   drawText(245,72, 2, ST77XX_CYAN,   String(temperatureMin[currentDay].as<float>()).c_str());
   drawText(245,100,2, ST77XX_ORANGE, String(temperatureMax[currentDay].as<float>()).c_str());
 
@@ -447,7 +447,7 @@ void drawSlider(int x, int y, int length, int height, int value, int minValue, i
 
 // Disegna l'icona passata come variabile
 void drawMeteo(int x,int y,const uint16_t *bitmap, int px, int py ){
-	tft.drawRGBBitmap(x, y, bitmap, px, py);
+    tft.pushImage(x, y, px, py, bitmap);
 	return;
 }
 

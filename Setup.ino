@@ -15,10 +15,10 @@ void setup() {
 	/****************************************/
 
 	/************ Init display *****************/  
-	tft.init(170,320);
-	tft.setSPISpeed(80000000);
-	tft.setRotation(1);  // Orientamento del display
-	digitalWrite(PIN_BL,HIGH); //retroilluminazione accesa
+        tft.init();
+        tft.setRotation(1);  // Orientamento del display
+        tft.setSwapBytes(true);
+        digitalWrite(PIN_BL,HIGH); //retroilluminazione accesa
 
 	////////////////// PULSANTI //////////////////////////
 	/*imposta debounde*/
