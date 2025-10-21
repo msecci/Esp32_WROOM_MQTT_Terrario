@@ -1,6 +1,6 @@
-/** @file Esp32_MQTT_Terrario.ino
+/** @file Esp32_WROOM_MQTT_Terrario.ino
  *  @brief contiele loop e dichiarazioni
- * @ board: Adafruit QT Py ESP32 C3
+ * @ board: ESP32 S3 DEV MODULE
  */
  
 float currentVersion=2.28;
@@ -48,12 +48,12 @@ float currentVersion=2.28;
 
 
 /*_______________________PIN DISPLAY____________________*/
-#define TFT_CS     18 
+/*#define TFT_CS     18 
 #define TFT_DC     23
 #define TFT_MOSI    5 
 #define TFT_SCLK   16  
 #define TFT_RST   -1		//pin per reset non utilizzato
-
+*/
 //Timer
 #define MILLIS_PER_ORA      3600000UL
 
@@ -80,30 +80,30 @@ float currentVersion=2.28;
 
 /*______________________ SENSOR DEFINITIONS (input) _____________________*/
 #define PIN_DHT         4
-#define BUTTON_PREV    13
-#define BUTTON_NEXT    14
-#define BUTTON_SELECT  15
-#define PIN_PHOTO      17
-#define PIN_BL         21
+#define BUTTON_PREV     5
+#define BUTTON_NEXT     6
+#define BUTTON_SELECT  12
+#define PIN_PHOTO      13
+#define PIN_BL          7
 
 /*_____________________ OUTPUT DEFINITIONS  (output) _____________________*/
-#define PIN_LED_BLU       22
-#define PIN_LED_RED       25 
-#define PIN_LED_WHITE     27
+#define PIN_LED_BLU       1
+#define PIN_LED_RED       3 
+#define PIN_LED_WHITE     2
 
 /*_____________DEFINIZIONE DI ALTRI COLORI_______________*/
-/*#define ST77XX_BLACK     0x0000
-#define ST77XX_BLUE      0x001F
-#define ST77XX_RED       0xF800
-#define ST77XX_GREEN     0x07E0
-#define ST77XX_CYAN      0x07FF
-#define ST77XX_MAGENTA   0xF81F
-#define ST77XX_YELLOW    0xFFE0
-#define ST77XX_WHITE     0xFFFF
-#define ST77XX_ORANGE    0xFD20
-#define ST77XX_GRAY      0x8430
-#define ST77XX_DARKGRAY  0x52AA
-*/
+#define TFT_BLACK     0x0000
+#define TFT_BLUE      0x001F
+#define TFT_RED       0xF800
+#define TFT_GREEN     0x07E0
+#define TFT_CYAN      0x07FF
+#define TFT_MAGENTA   0xF81F
+#define TFT_YELLOW    0xFFE0
+#define TFT_WHITE     0xFFFF
+#define TFT_ORANGE    0xFD20
+#define TFT_GRAY      0x8430
+#define TFT_DARKGRAY  0x52AA
+
 // dimensioni display
 const int screenWidth = 320;
 const int screenHeight = 170;
