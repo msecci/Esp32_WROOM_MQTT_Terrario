@@ -28,8 +28,6 @@ float currentVersion=2.28;
 #include <DHT.h>
 #include <WiFiManager.h>
 #include <HTTPClient.h>
-#include <Adafruit_GFX.h>    // Core graphics library
-//#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789 per C3
 #include <TFT_eSPI.h>  //Esp32
 //#include <LovyanGFX.hpp>
 #include <SPI.h>
@@ -94,6 +92,15 @@ float currentVersion=2.28;
 #define PIN_LED_WHITE     27
 
 /*_____________DEFINIZIONE DI ALTRI COLORI_______________*/
+#define ST77XX_BLACK     0x0000
+#define ST77XX_BLUE      0x001F
+#define ST77XX_RED       0xF800
+#define ST77XX_GREEN     0x07E0
+#define ST77XX_CYAN      0x07FF
+#define ST77XX_MAGENTA   0xF81F
+#define ST77XX_YELLOW    0xFFE0
+#define ST77XX_WHITE     0xFFFF
+#define ST77XX_ORANGE    0xFD20
 #define ST77XX_GRAY      0x8430
 #define ST77XX_DARKGRAY  0x52AA
 
@@ -244,7 +251,7 @@ SunriseSunset sunLight(PIN_LED_WHITE, PIN_LED_RED, PIN_LED_BLU);
 WiFiClient espClient;
 PubSubClient client(espClient);
 WiFiManager wm;
-Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCLK, TFT_RST); //omesso TFT_RST
+TFT_eSPI tft = TFT_eSPI();
 WiFiUDP ntpUDP;
 
 Preferences preferences;
