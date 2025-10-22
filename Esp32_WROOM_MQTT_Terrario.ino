@@ -75,7 +75,7 @@ float currentVersion=2.29;
 #define BUTTON_PREV    13
 #define BUTTON_NEXT    14
 #define BUTTON_SELECT  15
-#define PIN_PHOTO       4
+#define PIN_PHOTO      35
 #define PIN_BL         21
 #define PIN_VENTOLA    26
 
@@ -272,7 +272,7 @@ void loop() {
   timer.tick();
   sunLight.update();
   TimeManager::loop();
-  Serial.println(analogRead(PIN_PHOTO));
+  //Serial.println(analogRead(PIN_PHOTO));
  
   // Processa eventuali comandi MQTT in coda
   while (qTail != qHead) {
