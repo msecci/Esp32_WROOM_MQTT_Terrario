@@ -260,7 +260,13 @@ void enqueueMsg(const char* topic, const char* buf, unsigned len) {
     return;
   }
   queueMsg[qHead].topic = String(topic);
-  queueMsg[qHead].payload = String(buf).substring(0, len);
+
+  String payloadCopy;
+  payloadCopy.reserve(len);
+  for (unsigned i = 0; i < len; ++i) {
+    payloadCopy += static_cast<char>(buf[i]);
+  }
+  queueMsg[qHead].payload = payloadCopy;
   qHead = next;
 }
 /////////////////////////////////////////////
