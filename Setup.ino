@@ -6,6 +6,9 @@ void setup() {
 	pinMode(PIN_LED_BLU, OUTPUT);
 	pinMode(PIN_LED_RED, OUTPUT); 
 	pinMode(PIN_LED_WHITE, OUTPUT);
+	pinMode(PIN_LED_GREEN, OUTPUT);
+	pinMode(PIN_LED_UV, OUTPUT);
+	pinMode(PIN_FAN, OUTPUT);
 	pinMode(PIN_BL, OUTPUT);
 	pinMode(BUTTON_PREV, INPUT_PULLUP); 
 	pinMode(BUTTON_NEXT, INPUT_PULLUP); 

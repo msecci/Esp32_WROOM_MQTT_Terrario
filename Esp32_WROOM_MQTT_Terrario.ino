@@ -77,7 +77,7 @@ float currentVersion=2.29;
 #define BUTTON_SELECT  15
 #define PIN_PHOTO      35
 #define PIN_BL         21
-#define PIN_VENTOLA    26
+#define PIN_FAN        26
 
 
 /*_____________________ OUTPUT DEFINITIONS  (output) _____________________*/
