@@ -3,7 +3,7 @@
  * @ board: ESP32 S3 DEV MODULE
  */
  
-float currentVersion=2.28;
+float currentVersion=2.29;
 
 /*__________________________Parametri operativi (modificare secondo esigenze)____________________*/
 #define MAX_WHITE        	1300  //massimo valore per LED BIANCO (attenzione all'assorbimento) max 4096
@@ -46,14 +46,6 @@ float currentVersion=2.28;
 #include <esp_sntp.h>   // usa le API non deprecate
 
 
-
-/*_______________________PIN DISPLAY____________________*/
-/*#define TFT_CS     18 
-#define TFT_DC     23
-#define TFT_MOSI    5 
-#define TFT_SCLK   16  
-#define TFT_RST   -1		//pin per reset non utilizzato
-*/
 //Timer
 #define MILLIS_PER_ORA      3600000UL
 
@@ -79,17 +71,21 @@ float currentVersion=2.28;
 #define MQTT_DEBUG false       //abilita l'uscita su mqtt nella funzione printDebug
 
 /*______________________ SENSOR DEFINITIONS (input) _____________________*/
-#define PIN_DHT         4
-#define BUTTON_PREV     5
-#define BUTTON_NEXT     6
-#define BUTTON_SELECT  12
-#define PIN_PHOTO      13
-#define PIN_BL          7
+#define PIN_DHT        17
+#define BUTTON_PREV    13
+#define BUTTON_NEXT    14
+#define BUTTON_SELECT  15
+#define PIN_PHOTO      35
+#define PIN_BL         21
+#define PIN_VENTOLA    26
+
 
 /*_____________________ OUTPUT DEFINITIONS  (output) _____________________*/
-#define PIN_LED_BLU       1
-#define PIN_LED_RED       3 
-#define PIN_LED_WHITE     2
+#define PIN_LED_BLU      22
+#define PIN_LED_RED      25 
+#define PIN_LED_WHITE    27
+#define PIN_LED_GREEN    32
+#define PIN_LED_UV       33
 
 /*_____________DEFINIZIONE DI ALTRI COLORI_______________*/
 #define TFT_BLACK     0x0000
@@ -276,6 +272,7 @@ void loop() {
   timer.tick();
   sunLight.update();
   TimeManager::loop();
+  //Serial.println(analogRead(PIN_PHOTO));
  
   // Processa eventuali comandi MQTT in coda
   while (qTail != qHead) {
@@ -336,7 +333,7 @@ void loop() {
     } else if (Luminosita <= scenari[scenarioAttivo].luminosita - HYSTERESIS && !ledOn) {
       ledOn = true;
       sunLight.turnOn(scenari[scenarioAttivo].ledWhite, scenari[scenarioAttivo].ledRed, scenari[scenarioAttivo].ledBlue);
-      Serial.println("Troppa luce: ripristino");
+      Serial.println("Ripristino luce");
       pubblicaValoriAmbientali();
     }
   }

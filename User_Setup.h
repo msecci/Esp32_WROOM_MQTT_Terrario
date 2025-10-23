@@ -397,8 +397,8 @@
 
 // #define SUPPORT_TRANSACTIONS
 
-#define TFT_MOSI  10
-#define TFT_SCLK  11
-#define TFT_CS    8
-#define TFT_DC    9
-#define TFT_RST   -1
+#define TFT_MOSI  5
+#define TFT_SCLK  16
+#define TFT_CS    18
+#define TFT_DC    23
+#define TFT_RST   19

@@ -16,7 +16,7 @@ void setup() {
 
 	/************ Init display *****************/  
   tft.init();
-  tft.setRotation(0);  // Orientamento del display
+  tft.setRotation(1);  // Orientamento del display
   tft.setSwapBytes(true);
   digitalWrite(PIN_BL,HIGH); //retroilluminazione accesa
 

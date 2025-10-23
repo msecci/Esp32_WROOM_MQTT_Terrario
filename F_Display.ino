@@ -11,8 +11,6 @@ void mainScreen() {
 
     currentIndex=0;
     tft.fillScreen(TFT_BLACK);
-    drawText(0,0,4,TFT_WHITE,"Principale");
-    tft.fillScreen(TFT_BLACK);
     updateTime();
 
     // Giorno
@@ -106,9 +104,6 @@ void mainScreen() {
 void setupScreen() {
 
   tft.fillScreen(TFT_BLACK);
-  drawText(0,0,4,TFT_WHITE,"Setup");
-  tft.fillScreen(TFT_BLACK);
-  
   for (int i=0;i<4;i++){
     drawText(scenari[i].xText,scenari[i].yText,2,TFT_WHITE,(scenari[i].nome).c_str());
     tft.pushImage(scenari[i].xIco, scenari[i].yIco, 32, 32, scenari[i].icona);
