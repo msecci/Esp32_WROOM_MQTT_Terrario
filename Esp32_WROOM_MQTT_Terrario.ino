@@ -76,12 +76,12 @@ float currentVersion=2.29;
 #define BUTTON_NEXT    14
 #define BUTTON_SELECT  15
 #define PIN_PHOTO      35
-#define PIN_BL         21
+#define PIN_BL         23
 #define PIN_FAN        26
 
 
 /*_____________________ OUTPUT DEFINITIONS  (output) _____________________*/
-#define PIN_LED_BLU      22
+#define PIN_LED_BLU      16
 #define PIN_LED_RED      25 
 #define PIN_LED_WHITE    27
 #define PIN_LED_GREEN    32

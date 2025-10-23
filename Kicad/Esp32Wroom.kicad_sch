@@ -6808,7 +6808,7 @@
 			)
 		)
 	)
-	(global_label "DC"
+	(global_label "BLK"
 		(shape input)
 		(at 76.2 113.03 0)
 		(effects
@@ -6828,7 +6828,7 @@
 			)
 		)
 	)
-	(global_label "SDA"
+	(global_label "SCL"
 		(shape input)
 		(at 76.2 130.81 0)
 		(effects
@@ -6908,7 +6908,7 @@
 			)
 		)
 	)
-	(global_label "LED_B"
+	(global_label "CS"
 		(shape input)
 		(at 76.2 115.57 0)
 		(effects
@@ -6988,7 +6988,7 @@
 			)
 		)
 	)
-	(global_label "BLK"
+	(global_label "DC"
 		(shape input)
 		(at 76.2 123.19 0)
 		(effects
@@ -7108,7 +7108,7 @@
 			)
 		)
 	)
-	(global_label "CS"
+	(global_label "SDA"
 		(shape input)
 		(at 76.2 128.27 0)
 		(effects
@@ -7654,7 +7654,7 @@
 			)
 		)
 	)
-	(global_label "SCL"
+	(global_label "LED_B"
 		(shape input)
 		(at 76.2 135.89 0)
 		(effects
