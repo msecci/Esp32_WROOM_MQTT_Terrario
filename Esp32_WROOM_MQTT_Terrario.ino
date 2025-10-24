@@ -146,7 +146,7 @@ matrice posizioneIcone[]{
 };
 
 Scenario scenari[]{
-  //nome,icona,led_white,led_red,led_blue,luminosità,timer,x_icona,y_icona,x_testo,y_testo,ciclo,umidità
+  //nome,icona,led_white,led_red,led_blue,luminosità,timer,x_icona,y_icona,x_testo,y_testo,ciclo,umidità max, umidità min
   {"Tropicale",     icoTropicale,     30, 20, 60, 60, 12,  0,  0, 35,  8, 0, 95,80},
   {"Mediterraneo",  icoTemperato,     50, 20, 30, 70,  0,  0, 30, 35, 38, 1, 85,70},
   {"Desertico",     icoSoleggiato,    80, 25, 30, 60, 12,  0, 60, 35, 68, 0, 30,10},

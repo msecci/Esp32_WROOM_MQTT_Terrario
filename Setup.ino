@@ -39,7 +39,7 @@ void setup() {
 	Serial.print(String(WiFi.macAddress()));
 
 	// Avvia il WiFiManager e cerca di collegarsi alla rete salvata
-	if (!wm.autoConnect("ESP32_AP")) {
+	if (!wm.autoConnect("Coperchio_S2")) {
 		printDebug("Impossibile connettersi alla rete WiFi. Solo funzioni locali",false,SERIAL_DEBUG,TFT_DEBUG);
 	}
 
